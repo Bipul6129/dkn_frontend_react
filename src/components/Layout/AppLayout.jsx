@@ -24,7 +24,7 @@ function AppLayout() {
       {/* LEFT SIDEBAR */}
       <aside className="sidebar">
         <div className="sidebar-logo-area">
-          <img src="/logo.png" alt="DKN Logo" className="sidebar-logo-img" />
+          <img src="src/assets/logo_dkn.png" alt="DKN Logo" className="sidebar-logo-img" />
           <span className="sidebar-logo-text">DKN</span>
         </div>
 
