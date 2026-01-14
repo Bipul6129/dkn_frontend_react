@@ -15,6 +15,7 @@ import ProjectsPage from "./pages/ProjectsPage.jsx";
 import ProjectDetailPage from "./pages/ProjectDetailPage.jsx";
 import WorkspacePage from "./pages/WorkspacePage.jsx";
 import ReviewResourceDetailPage from "./pages/ReviewResourceDetailPage.jsx";
+import TrainingLeaderboardPage from "./pages/TrainingLeaderboardPage.jsx";
 
 function App() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -57,6 +58,10 @@ function App() {
         <Route path="training/courses/:id" element={<TrainingCourseDetailPage />} />
         
         <Route path="review-queue/:id" element={<ReviewResourceDetailPage/>}/>
+                <Route
+          path="/training/leaderboard"
+          element={<TrainingLeaderboardPage />}
+        />
       </Route>
 
       {/* Fallback */}

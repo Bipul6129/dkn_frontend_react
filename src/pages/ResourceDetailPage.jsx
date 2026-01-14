@@ -21,6 +21,8 @@ function ResourceDetailPage() {
   const user = useAuthStore((state) => state.user);
   const role = user?.role;
   const isCouncil = role === "COUNCIL";
+  const isEmployee = role === "EMPLOYEE";
+
 
   const [resource, setResource] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -504,8 +506,10 @@ function ResourceDetailPage() {
       resource.status
     );
 
-  // Can submit for review only when draft (you can extend this later)
-  const canSubmitForReview = resource && resource.status === "DRAFT";
+  // Employee uploader can submit only when status is DRAFT
+  const canSubmitForReview =
+    resource && isEmployee && resource.status === "DRAFT";
+
 
     // ---------- publish/unpublish based on latest review history ----------
 

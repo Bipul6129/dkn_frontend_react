@@ -1,21 +1,27 @@
 // src/pages/TrainingCoursesPage.jsx
 import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { apiGet, apiPost } from "../api/client.js";
+import { apiGet, apiPost, apiDelete } from "../api/client.js";
 import { useAuthStore } from "../store/authStore.js";
 import Loader from "../components/common/Loader.jsx";
 import ErrorMessage from "../components/common/ErrorMessage.jsx";
 import "../css/TrainingCoursesPage.css";
 
 const COURSES_ENDPOINT = "/training/courses/";
+const REGIONS_ENDPOINT = "/accounts/regions/";
 
 function TrainingCoursesPage() {
   const user = useAuthStore((state) => state.user);
   const role = user?.role;
 
   const [courses, setCourses] = useState([]);
+  const [regions, setRegions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  // delete state
+  const [deleteError, setDeleteError] = useState("");
+  const [deleteLoadingId, setDeleteLoadingId] = useState(null);
 
   // Champion-only: create course (simple)
   const [showCreateForm, setShowCreateForm] = useState(false);
@@ -51,22 +57,28 @@ function TrainingCoursesPage() {
   }
 
   useEffect(() => {
-    async function loadCourses() {
+    async function loadData() {
       setLoading(true);
       setError("");
+      setDeleteError("");
 
       try {
-        const data = await apiGet(COURSES_ENDPOINT);
-        setCourses(Array.isArray(data) ? data : []);
+        const [coursesData, regionsData] = await Promise.all([
+          apiGet(COURSES_ENDPOINT),
+          apiGet(REGIONS_ENDPOINT),
+        ]);
+
+        setCourses(Array.isArray(coursesData) ? coursesData : []);
+        setRegions(Array.isArray(regionsData) ? regionsData : []);
       } catch (err) {
         console.error(err);
-        setError("Failed to load training courses.");
+        setError("Failed to load training courses or regions.");
       } finally {
         setLoading(false);
       }
     }
 
-    loadCourses();
+    loadData();
   }, []);
 
   const filteredCourses = useMemo(() => {
@@ -122,6 +134,30 @@ function TrainingCoursesPage() {
     }
   }
 
+  // -------- delete course (Champion; backend enforces ownership) --------
+
+  async function handleDeleteCourse(course) {
+    if (!course) return;
+
+    const ok = window.confirm(
+      `Delete training course "${course.title}" and its materials/quiz?`
+    );
+    if (!ok) return;
+
+    setDeleteError("");
+    setDeleteLoadingId(course.id);
+
+    try {
+      await apiDelete(`${COURSES_ENDPOINT}${course.id}/`);
+      setCourses((prev) => prev.filter((c) => c.id !== course.id));
+    } catch (err) {
+      console.error(err);
+      setDeleteError("Failed to delete training course.");
+    } finally {
+      setDeleteLoadingId(null);
+    }
+  }
+
   if (loading) return <Loader />;
 
   return (
@@ -135,7 +171,7 @@ function TrainingCoursesPage() {
         </p>
       </header>
 
-      <ErrorMessage message={error} />
+      <ErrorMessage message={error || deleteError} />
 
       {/* top bar */}
       <div className="training-toolbar">
@@ -180,14 +216,24 @@ function TrainingCoursesPage() {
             <div className="training-field">
               <label>
                 <span className="training-label">Region *</span>
-                <input
-                  type="text"
+                <select
                   value={region}
                   onChange={(e) => setRegion(e.target.value)}
-                  placeholder="GLOBAL, EU, APAC..."
                   className="training-input"
-                />
+                >
+                  <option value="">Select region...</option>
+                  {regions.map((r) => (
+                    <option key={r.value} value={r.value}>
+                      {r.label}
+                    </option>
+                  ))}
+                </select>
               </label>
+              {regions.length === 0 && (
+                <p className="training-help-text">
+                  No regions loaded – check the /accounts/regions/ endpoint.
+                </p>
+              )}
             </div>
 
             <div className="training-field">
@@ -250,21 +296,52 @@ function TrainingCoursesPage() {
                 <th>Created by</th>
                 <th>Created</th>
                 <th>Details</th>
+                {isChampion && <th>Actions</th>}
               </tr>
             </thead>
             <tbody>
-              {filteredCourses.map((c) => (
-                <tr key={c.id}>
-                  <td>{c.title}</td>
-                  <td>{c.region || "-"}</td>
-                  <td>{formatStatus(c.status)}</td>
-                  <td>{c.created_by_name || "-"}</td>
-                  <td>{formatDate(c.created_at)}</td>
-                  <td>
-                    <Link to={`/training/courses/${c.id}`}>Open</Link>
-                  </td>
-                </tr>
-              ))}
+              {filteredCourses.map((c) => {
+                const isCreatorChampion =
+                  isChampion && user && c.created_by === user.id;
+
+                return (
+                  <tr key={c.id}>
+                    <td>{c.title}</td>
+                    <td>{c.region || "-"}</td>
+                    <td>{formatStatus(c.status)}</td>
+                    <td>{c.created_by_name || "-"}</td>
+                    <td>{formatDate(c.created_at)}</td>
+                    <td>
+                      <Link to={`/training/courses/${c.id}`}>Open</Link>
+                    </td>
+                    {isChampion && (
+                      <td>
+                        {isCreatorChampion ? (
+                          <button
+                            type="button"
+                            onClick={() => handleDeleteCourse(c)}
+                            disabled={deleteLoadingId === c.id}
+                            className="training-danger-btn"
+                          >
+                            {deleteLoadingId === c.id
+                              ? "Deleting..."
+                              : "Delete"}
+                          </button>
+                        ) : (
+                          <span
+                            style={{
+                              fontSize: "0.8rem",
+                              color: "#999",
+                            }}
+                          >
+                            —
+                          </span>
+                        )}
+                      </td>
+                    )}
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

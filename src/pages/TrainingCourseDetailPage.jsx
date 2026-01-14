@@ -852,6 +852,19 @@ function TrainingCourseDetailPage() {
           <header className="tc-header">
             <h1 className="tc-title">{course.title}</h1>
 
+            {/* NEW: leaderboard button */}
+            <div className="tc-header-actions">
+              <button
+                type="button"
+                className="tc-secondary-btn"
+                onClick={() =>
+                  navigate(`/training/leaderboard?course=${course.id}`)
+                }
+              >
+                View leaderboard for this course
+              </button>
+            </div>
+
             {course.description && (
               <p className="tc-subtitle">{course.description}</p>
             )}
@@ -870,6 +883,7 @@ function TrainingCourseDetailPage() {
               {formatDateTime(course.updated_at)}
             </p>
           </header>
+
 
           {/* Two-column layout */}
           <div className="tc-layout">
