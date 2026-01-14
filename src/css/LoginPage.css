@@ -1,4 +1,4 @@
-/* src/pages/LoginPage.css */
+/* src/css/LoginPage.css */
 
 body,
 html {
@@ -20,7 +20,6 @@ html {
   align-items: center;
   background-color: #ffffff;
 }
-
 
 /* Centering the card */
 .login-page {
@@ -46,7 +45,7 @@ html {
 /* Logo */
 .login-logo {
   display: block;
-  width: 120px; /* boosted from 80px */
+  width: 120px;
   margin: 4px auto 28px auto;
 }
 
@@ -64,6 +63,7 @@ html {
   flex-direction: column;
   gap: 14px;
 }
+
 
 .login-form label {
   display: flex;
@@ -111,7 +111,7 @@ html {
 /* Button */
 .login-form button {
   padding: 12px;
-  background-color: #111827; /* deep navy like Figma */
+  background-color: #111827;
   color: #ffffff;
   font-weight: 600;
   border: none;
@@ -127,4 +127,94 @@ html {
 
 .login-form button:active {
   transform: translateY(1px);
+}
+
+/* Demo login section for examiner */
+.demo-login {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.demo-login h3 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.demo-hint {
+  margin: 4px 0 10px 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.demo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.demo-button {
+  padding: 8px 10px;
+  border-radius: 9999px;
+  border: 1px dashed #9ca3af;
+  background-color: #f9fafb;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+}
+
+.demo-button:hover {
+  background-color: #e5e7eb;
+  box-shadow: 0 3px 6px rgba(15, 23, 42, 0.08);
+}
+
+.demo-button:active {
+  transform: translateY(1px);
+}
+
+/* Backend starting / cold start message */
+.backend-starting-msg {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #9a3412;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeBlink 1.4s infinite;
+}
+
+@keyframes fadeBlink {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Small spinner */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fdba74;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
