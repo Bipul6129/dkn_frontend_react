@@ -2,6 +2,7 @@
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../store/authStore";
 import "../../css/AppLayout.css";
+import logoDKN from "../../assets/logo_dkn.png";
 
 function AppLayout() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function AppLayout() {
       {/* LEFT SIDEBAR */}
       <aside className="sidebar">
         <div className="sidebar-logo-area">
-          <img src="src/assets/logo_dkn.png" alt="DKN Logo" className="sidebar-logo-img" />
+          <img src={logoDKN} alt="DKN Logo" className="sidebar-logo-img" />
           <span className="sidebar-logo-text">DKN</span>
         </div>
 

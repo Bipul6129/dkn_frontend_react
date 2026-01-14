@@ -5,6 +5,7 @@ import { apiPost, apiGet } from "../api/client.js";
 import ErrorMessage from "../components/common/ErrorMessage.jsx";
 import { useAuthStore } from "../store/authStore";
 import "../css/LoginPage.css";
+import logoDkn from "../assets/logo_dkn.png";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -75,7 +76,7 @@ function LoginPage() {
     <div className="login-page">
       <div className="login-box">
         <img
-          src="src/assets/logo_dkn.png"
+          src={logoDkn}
           alt="DKN Logo"
           className="login-logo"
         />
