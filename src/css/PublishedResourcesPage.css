@@ -1,0 +1,170 @@
+/* PublishedResourcesPage.css */
+
+.pr-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pr-header {
+  margin-bottom: 1rem;
+}
+
+.pr-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+}
+
+.pr-subtitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.pr-search-row {
+  margin-bottom: 0.75rem;
+}
+
+.pr-search-input {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.pr-search-input:focus {
+  outline: none;
+  border-color: #020617;
+}
+
+/* List & cards */
+
+.pr-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.pr-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 0.9rem 1.1rem;
+}
+
+.pr-card-main {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.pr-card-left {
+  flex: 2 1 0;
+}
+
+.pr-card-right {
+  flex: 1.2 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.pr-card-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+.pr-card-description {
+  margin: 0 0 0.45rem 0;
+  font-size: 0.9rem;
+}
+
+.pr-card-status {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.pr-card-dates {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.pr-card-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.15rem;
+}
+
+.pr-card-section {
+  font-size: 0.85rem;
+}
+
+.pr-card-file {
+  font-size: 0.85rem;
+}
+
+.pr-file-link {
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+
+/* Tags */
+
+.pr-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.pr-tag-chip {
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+}
+
+/* Metadata */
+
+.pr-meta-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.pr-meta-row {
+  display: flex;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.pr-meta-key {
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.pr-meta-value {
+  color: #111827;
+}
+
+/* Utilities */
+
+.pr-muted {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .pr-card-main {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,256 @@
+/* ReviewResourceDetailPage.css */
+
+.rr-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rr-back-btn {
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.rr-header {
+  margin-bottom: 1rem;
+}
+
+.rr-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.rr-status-line {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0.4rem;
+}
+
+.rr-description {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.rr-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Layout */
+
+.rr-layout {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  margin-top: 1.2rem;
+}
+
+.rr-main {
+  flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.rr-side {
+  flex: 1 1 0;
+}
+
+/* Cards */
+
+.rr-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 0.85rem 1rem;
+}
+
+.rr-decision-card {
+  position: sticky;
+  top: 80px;
+}
+
+.rr-section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+/* Text helpers */
+
+.rr-muted {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Tags */
+
+.rr-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.rr-tag {
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+}
+
+.rr-tag-more {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+/* Tables */
+
+.rr-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.rr-table-label {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-weight: 600;
+  width: 30%;
+  font-size: 0.85rem;
+}
+
+.rr-table-value {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.85rem;
+}
+
+/* AI flags */
+
+.rr-ai-list {
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* Timeline */
+
+.rr-timeline {
+  border-left: 2px solid #e5e7eb;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+}
+
+.rr-timeline-item {
+  position: relative;
+  margin-bottom: 0.9rem;
+}
+
+.rr-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #4b5563;
+  position: absolute;
+  left: -1.15rem;
+  top: 0.4rem;
+}
+
+.rr-timeline-title {
+  font-size: 0.9rem;
+}
+
+.rr-timeline-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.rr-timeline-comment {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  padding: 0.3rem 0.45rem;
+  background: #f9fafb;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Form */
+
+.rr-form-group {
+  margin-bottom: 0.6rem;
+}
+
+.rr-label {
+  font-size: 0.9rem;
+  display: block;
+}
+
+.rr-label-hint {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.rr-select {
+  margin-top: 0.25rem;
+  width: 100%;
+  padding: 0.3rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.rr-textarea {
+  margin-top: 0.25rem;
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+/* Buttons & messages */
+
+.rr-primary-btn {
+  margin-top: 0.25rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #020617;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.rr-primary-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.rr-error-text {
+  color: #b91c1c;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.rr-success-text {
+  color: #15803d;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .rr-layout {
+    flex-direction: column;
+  }
+
+  .rr-decision-card {
+    position: static;
+  }
+}

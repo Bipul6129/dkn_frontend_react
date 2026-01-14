@@ -1,0 +1,187 @@
+/* ReviewQueuePage.css */
+
+.rq-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.rq-header {
+  margin-bottom: 1rem;
+}
+
+.rq-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.rq-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.rq-empty {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.75rem;
+}
+
+/* Table */
+
+.rq-table-wrapper {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03);
+  max-width: 960px;
+}
+
+.rq-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.rq-th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #4b5563;
+  background: #f9fafb;
+}
+
+.rq-td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.85rem;
+  vertical-align: top;
+}
+
+/* Title cell */
+
+.rq-title-cell-main {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.rq-title-cell-sub {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-top: 0.15rem;
+}
+
+/* Tags */
+
+.rq-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.rq-tag-chip {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.78rem;
+  background: #f9fafb;
+}
+
+.rq-tags-more {
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
+/* AI flag pill */
+
+.rq-ai-pill {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.rq-ai-ok {
+  background-color: #ecfdf3;
+  color: #166534;
+}
+
+.rq-ai-low {
+  background-color: #ecfdf3;
+  color: #166534;
+}
+
+.rq-ai-medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.rq-ai-high {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Misc text */
+
+.rq-muted {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.rq-link {
+  font-size: 0.85rem;
+  color: #111827;
+  text-decoration: underline;
+}
+
+/* Pagination */
+
+.rq-pagination {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.rq-page-btn {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.8rem;
+}
+
+.rq-page-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.rq-pagination-info {
+  margin-left: auto;
+  color: #6b7280;
+}
+
+/* Small screens */
+
+@media (max-width: 800px) {
+  .rq-page {
+    max-width: 100%;
+  }
+
+  .rq-table-wrapper {
+    border-radius: 0.75rem;
+  }
+
+  .rq-pagination {
+    flex-wrap: wrap;
+  }
+
+  .rq-pagination-info {
+    margin-left: 0;
+  }
+}

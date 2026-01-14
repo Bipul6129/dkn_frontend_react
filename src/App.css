@@ -1,0 +1,11 @@
+/* src/App.css */
+
+/* Remove Vite's default layout restrictions */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* You can keep any app-wide styles you actually want below */

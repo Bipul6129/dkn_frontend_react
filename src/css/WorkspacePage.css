@@ -1,0 +1,182 @@
+.ws-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.ws-back-btn {
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+}
+
+.ws-header {
+  margin-bottom: 1.25rem;
+}
+
+.ws-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.ws-subtitle {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.ws-meta-line {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.ws-default-pill {
+  color: #16a34a;
+}
+
+.ws-link-line {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+}
+
+/* Layout */
+.ws-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.ws-main {
+  flex: 2;
+}
+
+.ws-side {
+  flex: 1.3;
+}
+
+/* Cards */
+.ws-card {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 0.9rem 1rem;
+}
+
+.ws-section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+/* Posts */
+.ws-muted {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.ws-posts-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.ws-post-card {
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 0.9rem;
+}
+
+.ws-post-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.1rem;
+}
+
+.ws-post-date {
+  font-size: 0.75rem;
+  color: #777;
+  margin-left: 0.2rem;
+}
+
+.ws-post-body {
+  white-space: pre-wrap;
+}
+
+.ws-post-body-with-attachment {
+  margin-bottom: 0.35rem;
+}
+
+.ws-post-attachment a {
+  font-size: 0.85rem;
+}
+
+/* Form */
+.ws-form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ws-form-group textarea {
+  resize: vertical;
+}
+
+.ws-label {
+  font-size: 0.8rem;
+  display: block;
+}
+
+.ws-label textarea,
+.ws-label input[type="file"] {
+  width: 100%;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.ws-label textarea {
+  padding: 0.45rem 0.75rem 0.45rem 0.55rem; /* top right bottom left */
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  line-height: 1.35;
+}
+
+
+.ws-error-text {
+  font-size: 0.8rem;
+  color: #b91c1c;
+}
+
+/* Buttons */
+.ws-btn-primary {
+  font-size: 0.85rem;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid transparent;
+  background: #111827;
+  color: #f9fafb;
+  cursor: pointer;
+}
+
+.ws-btn-text-danger {
+  border: none;
+  background: transparent;
+  color: #b91c1c;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ws-layout {
+    flex-direction: column;
+  }
+}

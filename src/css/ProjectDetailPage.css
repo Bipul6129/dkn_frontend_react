@@ -1,0 +1,266 @@
+/* Layout */
+.proj-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.proj-back-btn {
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+}
+
+.proj-header {
+  margin-bottom: 1.25rem;
+}
+
+.proj-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+
+.proj-subtitle {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.proj-meta-line {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+.proj-meta-line-small {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.proj-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.proj-main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.proj-side {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Cards & sections */
+.proj-card {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 0.9rem 1rem;
+}
+
+.proj-section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+/* Text helpers */
+.proj-muted {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.proj-error-text {
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+.proj-success-text {
+  color: #15803d;
+  font-size: 0.8rem;
+}
+
+.proj-tag {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Table */
+.proj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.proj-table th,
+.proj-table td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+/* Workspaces */
+.proj-workspace-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.proj-workspace-card {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fdfdfd;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.proj-workspace-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.proj-workspace-desc {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.proj-workspace-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+.proj-default-pill {
+  margin-left: 0.25rem;
+  color: #16a34a;
+}
+
+.proj-workspace-actions {
+  align-self: center;
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* Forms */
+.proj-form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.proj-form-field {
+  min-width: 180px;
+  flex: 1;
+}
+
+.proj-label {
+  font-size: 0.8rem;
+  display: block;
+}
+
+.proj-label select,
+.proj-label input,
+.proj-label textarea {
+  width: 100%;
+  margin-top: 0.15rem;
+  padding: 0.35rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+  background: white;
+}
+
+.proj-form-submit {
+  margin-top: 0.1rem;
+}
+
+.proj-form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.proj-form-group textarea {
+  resize: vertical;
+}
+
+.proj-checkbox-row {
+  display: flex;
+  align-items: center;
+}
+
+.proj-label-inline {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Buttons */
+.proj-btn-primary,
+.proj-btn-secondary,
+.proj-btn-danger,
+.proj-btn-text {
+  font-size: 0.85rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.proj-btn-primary {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.proj-btn-secondary {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.proj-btn-danger {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.proj-btn-text {
+  background: transparent;
+  border: none;
+  color: #b91c1c;
+  padding: 0;
+}
+
+/* Spacing helpers */
+.proj-mb-sm {
+  margin-bottom: 0.5rem;
+}
+.proj-mb-xs {
+  margin-bottom: 0.25rem;
+}
+.proj-mt-xs {
+  margin-top: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .proj-layout {
+    flex-direction: column;
+  }
+}
